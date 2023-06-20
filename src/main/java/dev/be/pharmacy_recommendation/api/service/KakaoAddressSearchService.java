@@ -29,7 +29,7 @@ public class KakaoAddressSearchService {
 
         URI uri = kakaoUriBuilderService.buildUriByAddressSearch(address);
         HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.set(HttpHeaders.AUTHORIZATION, "KAKAOAK " + kakaoRestApiKey);
+        httpHeaders.set(HttpHeaders.AUTHORIZATION, "KakaoAK " + kakaoRestApiKey);
         HttpEntity httpEntity = new HttpEntity<>(httpHeaders);
 
         return restTemplate.exchange(uri, HttpMethod.GET, httpEntity, KakaoApiResponseDto.class).getBody();
